@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace ValidationHelper
+namespace ValidationUtility
 {
     internal class DateTimeValidationHelper
     {

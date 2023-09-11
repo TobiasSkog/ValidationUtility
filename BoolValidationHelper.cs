@@ -1,4 +1,4 @@
-﻿namespace ValidationHelper
+﻿namespace ValidationUtility
 {
     internal class BoolValidationHelper
     {
