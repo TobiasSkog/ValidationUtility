@@ -5,31 +5,32 @@
     /// </summary>
     public class PasswordValidationHelper
     {
+
         public static string PasswordValidation(
-            string prompt,
-            byte minLength = 8,
-            byte maxLength = 113,
-            bool mustHaveSpecialCharacters = true,
-            bool mustHaveNumbers = true,
-            bool mustHaveLowerAndUpperCaseLetters = true,
-            bool avoidIllegalChars = false,
-            char[]? specialChars = null,
-            char[]? illegalChars = null)
+                string prompt,
+                byte minLength = 8,
+                byte maxLength = 113,
+                bool mustHaveSpecialCharacters = true,
+                bool mustHaveNumbers = true,
+                bool mustHaveLowerAndUpperCaseLetters = true,
+                bool avoidIllegalChars = false,
+                char[]? specialChars = null,
+                char[]? illegalChars = null)
         {
             specialChars ??= new char[] {
             '@', '#', '$', '%', '^', '&','*', '-',
             '_', '!', '+', '=','[', ']', '{', '}',
             '|', '\\',':', '\'', ',', '.', '?', '/',
             '`', '~', '"', '(', ')', ';','<', '>' };
-
+            bool hasDigit, hasLower, hasUpper, hasSpecial, hasIllegal, emptyVal;
+            List<string> errorMessages;
             while (true)
             {
-                bool hasDigit = false, hasLower = false, hasUpper = false, hasSpecial = false, hasIllegal = false;
+                string userInput = CharValidationHelper.CharPasswordCreator(prompt, true);
 
-                List<string> errorMessages = new List<string>();
+                hasDigit = false; hasLower = false; hasUpper = false; hasSpecial = false; hasIllegal = false;
 
-                string userInput = StringValidationHelper.GetString(prompt).Trim();
-
+                errorMessages = new List<string>();
                 foreach (char c in userInput)
                 {
                     if (mustHaveNumbers && char.IsDigit(c))
@@ -88,7 +89,7 @@
                 // If there are error messages, display them and ask the user to recreate the password
                 if (errorMessages.Count > 0)
                 {
-                    ExceptionHelper.ExceptionDetails("Password validation failed. Please fix the following issues:", errorMessages);
+                    ExceptionHelper.ExceptionDetails("\nPassword validation failed. Please fix the following issues:", errorMessages);
                 }
                 else
                 {
@@ -98,3 +99,5 @@
         }
     }
 }
+
+
