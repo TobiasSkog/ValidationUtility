@@ -37,9 +37,7 @@ namespace ValidationUtility
 
         /// <summary>
         /// Require the user to be on Windows.<br></br>
-        /// Checks if Capslock and Numlock is enabled and writes to console.<br></br> 
-        /// If the user is not on Windows nothing will happend.<br></br>
-        /// Only makes the check the parameters are set to true.
+        /// Checks if Capslock and / or Numlock is enabled and writes to console.<br></br> 
         /// </summary>
         /// <param name="checkCapsLock">Make a "Caps Lock Control" and Write out a warning to the console?</param>
         /// <param name="checkNumlock">Make a "Numbers Lock Control" and Write out a warning to the console?</param>
