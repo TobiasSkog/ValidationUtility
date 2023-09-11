@@ -1,6 +1,6 @@
 ﻿namespace ValidationUtility
 {
-    internal class ListValidationHelper
+    public class ListValidationHelper
     {
         public static void AddObjectsToList<T>(T[] objects, List<T> list)
         {

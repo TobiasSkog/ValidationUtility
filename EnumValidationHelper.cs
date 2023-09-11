@@ -1,6 +1,9 @@
 ﻿namespace ValidationUtility
 {
-    internal class EnumValidationHelper
+    /// <summary>
+    /// Validation Helper Class for Enums.
+    /// </summary>
+    public class EnumValidationHelper
     {
         public static T GetEnumValue<T>(string prompt) where T : struct
         {

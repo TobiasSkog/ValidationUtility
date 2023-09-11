@@ -2,7 +2,10 @@
 
 namespace ValidationUtility
 {
-    internal class DateTimeValidationHelper
+    /// <summary>
+    /// Validation Helper Class for DateTime.
+    /// </summary>
+    public class DateTimeValidationHelper
     {
         public static DateTime GetDateTime(string prompt)
         {

@@ -1,6 +1,10 @@
 ﻿namespace ValidationUtility
 {
-    internal class ExceptionHelper
+    /// <summary>
+    /// Validation Helper Class for Exceptions.<br></br>
+    /// </summary>
+    // TODO: Handle specific Exceptions based on the Exception thrown.
+    public class ExceptionHelper
     {
         public static void ExceptionDetails(Exception ex)
         {

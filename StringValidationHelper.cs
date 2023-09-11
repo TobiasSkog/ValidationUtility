@@ -1,6 +1,6 @@
 ﻿namespace ValidationUtility
 {
-    internal class StringValidationHelper
+    public class StringValidationHelper
     {
         public static string GetString(string prompt)
         {

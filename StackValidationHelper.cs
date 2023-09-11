@@ -1,6 +1,6 @@
 ﻿namespace ValidationUtility
 {
-    internal class StackValidationHelper
+    public class StackValidationHelper
     {
         public static void AddObjectsToStack<T>(T[] objects, Stack<T> stack)
         {

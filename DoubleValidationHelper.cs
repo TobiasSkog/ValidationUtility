@@ -1,6 +1,9 @@
 ﻿namespace ValidationUtility
 {
-    internal class DoubleValidationHelper
+    /// <summary>
+    /// Validation Helper Class for Doubles.
+    /// </summary>
+    public class DoubleValidationHelper
     {
         public static double GetDouble(string prompt, double minRange)
         {

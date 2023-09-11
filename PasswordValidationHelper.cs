@@ -1,6 +1,6 @@
 ﻿namespace ValidationUtility
 {
-    internal class PasswordValidationHelper
+    public class PasswordValidationHelper
     {
         public static string PasswordValidation(
             string prompt,

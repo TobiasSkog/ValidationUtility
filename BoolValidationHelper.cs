@@ -1,6 +1,9 @@
 ﻿namespace ValidationUtility
 {
-    internal class BoolValidationHelper
+    /// <summary>
+    /// Validation Helper Class for Booleans.
+    /// </summary>
+    public class BoolValidationHelper
     {
         public static bool PromptForYesOrNo(string prompt = "Answer (Y)es or (N)o: ")
         {
