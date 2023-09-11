@@ -5,7 +5,7 @@
         public static void ExceptionDetails(Exception ex)
         {
             // Checking if the user wants a detailed error message or not
-            if (BoolValidationHelper.PromptForYesOrNo())
+            if (BoolValidationHelper.PromptForYesOrNo("See detailed error message? (Y)es or (N)o: "))
             {
                 Console.WriteLine($"Error Message: {ex.Message}");
                 Console.WriteLine($"Stack Trace: {ex.StackTrace}");
