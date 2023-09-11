@@ -1,5 +1,9 @@
 ﻿namespace ValidationUtility
 {
+    /// <summary>
+    /// Validation Helper Class for Lists.<br></br>
+    /// Includes the List functionality to Add, FindFirst, FindAll with exception handling implemented.
+    /// </summary>
     public class ListValidationHelper
     {
         public static void AddObjectsToList<T>(T[] objects, List<T> list)

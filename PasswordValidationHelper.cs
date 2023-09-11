@@ -1,5 +1,8 @@
 ﻿namespace ValidationUtility
 {
+    /// <summary>
+    /// Validation Helper Class for creating a Password.
+    /// </summary>
     public class PasswordValidationHelper
     {
         public static string PasswordValidation(

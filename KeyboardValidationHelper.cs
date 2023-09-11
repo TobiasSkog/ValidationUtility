@@ -3,9 +3,11 @@
 namespace ValidationUtility
 {
     /// <summary>
-    /// Validation Helper Class that can control if Capslock and if Numbers Lock is on / off. <br></br>
-    /// Writes to the console if the trigger key is activated.
+    /// Validation Helper Class for Keyboard Specific Validation.<br></br>
+    /// Control if Capslock and / or Numbers Lock is on / off.<br></br>
+    /// Writes to the console if the Trigger(s) key is activated.
     /// </summary>
+
     public class KeyboardValidationHelper
     {
         private static readonly bool _windowsOS = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);

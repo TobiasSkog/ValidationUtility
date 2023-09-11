@@ -3,7 +3,7 @@
 namespace ValidationUtility
 {
     /// <summary>
-    /// Validation Helper Class for DateTime.
+    /// Validation Helper Class for DateTimes.
     /// </summary>
     public class DateTimeValidationHelper
     {

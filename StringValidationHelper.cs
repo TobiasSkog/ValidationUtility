@@ -1,5 +1,8 @@
 ﻿namespace ValidationUtility
 {
+    /// <summary>
+    /// Validation Helper Class for Strings.
+    /// </summary>
     public class StringValidationHelper
     {
         public static string GetString(string prompt)

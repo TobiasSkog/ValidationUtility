@@ -1,5 +1,8 @@
 ﻿namespace ValidationUtility
 {
+    /// <summary>
+    /// Validation Helper Class for Integers.
+    /// </summary>
     public class IntValidationHelper
     {
         public static int GetInteger(string prompt, int minRange)
