@@ -36,7 +36,7 @@
                     return userInput;
                 }
 
-                Console.WriteLine("Invalid input. You cannot use an empty text or only white spaces.");
+                Console.WriteLine("Invalid input. You cannot use an empty text.");
             }
         }
     }
