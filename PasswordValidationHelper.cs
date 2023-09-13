@@ -5,7 +5,6 @@
     /// </summary>
     public class PasswordValidationHelper
     {
-
         public static string PasswordValidation(
                 string prompt,
                 byte minLength = 8,
