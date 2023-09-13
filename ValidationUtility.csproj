@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,6 +7,14 @@
     <BaseOutputPath>F:\SKOLA EDUGRADE\Libraries</BaseOutputPath>
     <BaseIntermediateOutputPath />
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <IsPublishable>True</IsPublishable>
+    <SignAssembly>False</SignAssembly>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>ValidationUtilityTobiasSkogNET23</PackageId>
+    <Title>Validation Utilites by Tobias Skog of Class NET23</Title>
+    <Authors>Tobias Skog</Authors>
+    <Description>A valdiation Utility library for helping with getting correct input and error handling. Specific use for my projects during my time studying at Edugrade</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
