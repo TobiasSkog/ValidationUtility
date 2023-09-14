@@ -17,7 +17,7 @@
     <Description>A valdiation Utility library for helping with getting correct input and error handling. Specific use for my projects during my time studying at Edugrade</Description>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Version>$(VersionPrefix)1.0.1</Version>
+    <Version>$(VersionPrefix)1.0.2</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
