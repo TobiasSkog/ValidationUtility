@@ -140,15 +140,10 @@ namespace ValidationUtility
                 {
                     return userDateOfBirth;
                 }
-                if (userAge < ageRestriction)
-                {
-                    Console.WriteLine($"Du måste minst vara {ageRestriction} för att göra ett konto! Det är  år kvar.");
-                }
-
-                Console.WriteLine($"Invalid input. The age restriction is {ageRestriction}, you are {ageRestriction - userAge} years too young.");
+                Console.WriteLine($"Invalid input. The age restriction is {ageRestriction}!\n" +
+                $"You are {ageRestriction - userAge} years too young.");
             }
         }
-
         public static DateTime GetExactDateTimeAgeRestriction(string prompt, string format, int ageRestriction)
         {
             DateTime dateToday = DateTime.Now;
@@ -161,12 +156,9 @@ namespace ValidationUtility
                 {
                     return userDateOfBirth;
                 }
-                if (userAge < ageRestriction)
-                {
-                    Console.WriteLine($"Du måste minst vara {ageRestriction} för att göra ett konto! Det är  år kvar.");
-                }
 
-                Console.WriteLine($"Invalid input. The age restriction is {ageRestriction}, you are {ageRestriction - userAge} years too young.");
+                Console.WriteLine($"Invalid input. The age restriction is {ageRestriction}!\n" +
+                $"You are {ageRestriction - userAge} years too young.");
             }
         }
 

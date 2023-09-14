@@ -22,5 +22,20 @@
                 Console.WriteLine("Invalid input. Answer must be (Y)es or (N)o.");
             }
         }
+
+        public static bool ValidateAgeRestriction(DateTime userDateOfBirth, int ageRestriction)
+        {
+            DateTime dateToday = DateTime.Now;
+
+            int userAge = dateToday.Year - userDateOfBirth.Year;
+
+            if (userAge >= ageRestriction)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
     }
 }
