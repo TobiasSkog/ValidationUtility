@@ -9,7 +9,7 @@
         {
             while (true)
             {
-                KeyboardValidationHelper.IsToggleKeysEnabled(true, true);
+                KeyboardValidationHelper.IsToggleKeysEnabled(true, false);
 
                 Console.Write(prompt);
 
@@ -28,7 +28,7 @@
         {
             while (true)
             {
-                KeyboardValidationHelper.IsToggleKeysEnabled(true, true);
+                KeyboardValidationHelper.IsToggleKeysEnabled(true, false);
 
                 Console.Write(prompt);
 
