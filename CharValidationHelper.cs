@@ -2,7 +2,7 @@
 
 namespace ValidationUtility
 {
-    internal class CharValidationHelper
+    public class CharValidationHelper
     {
         public static string CharPasswordCreator(string prompt, bool showHiddenOutput)
         {
@@ -47,6 +47,19 @@ namespace ValidationUtility
                     }
                 }
             }
+        }
+
+        public static string CreateRandomUserId(int length = 60)
+        {
+            string AllowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            Random Random = new Random();
+
+            char[] randomUserId = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                randomUserId[i] = AllowedChars[Random.Next(0, AllowedChars.Length)];
+            }
+            return new string(randomUserId);
         }
     }
 }

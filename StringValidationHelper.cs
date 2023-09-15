@@ -1,4 +1,6 @@
-﻿namespace ValidationUtility
+﻿using System.Text.RegularExpressions;
+
+namespace ValidationUtility
 {
     /// <summary>
     /// Validation Helper Class for Strings.
@@ -41,6 +43,16 @@
 
                 Console.WriteLine("Invalid input. You cannot use an empty text.");
             }
+        }
+
+        public static string GetCleanSpectreConsoleString(string input, string pattern = @"\[(.*?)\](.*?)\[/\]")
+        {
+            Match match = Regex.Match(input, pattern);
+
+            string labelText = match.Groups[2].Value;
+            string cleanedLabel = string.Join("", labelText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
+
+            return cleanedLabel;
         }
     }
 }
