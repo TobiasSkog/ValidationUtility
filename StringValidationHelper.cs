@@ -1,70 +1,98 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Globalization;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ValidationUtility
 {
-    /// <summary>
-    /// Validation Helper Class for Strings.
-    /// </summary>
-    public class StringValidationHelper
+  /// <summary>
+  /// Validation Helper Class for Strings.
+  /// </summary>
+  public class StringValidationHelper
+  {
+    public static string GetString(string prompt)
     {
-        public static string GetString(string prompt)
+      while (true)
+      {
+        KeyboardValidationHelper.IsToggleKeysEnabled(true, false);
+
+        Console.Write(prompt);
+
+        string? userInput = Console.ReadLine();
+
+        if (!string.IsNullOrWhiteSpace(userInput))
         {
-            while (true)
-            {
-                KeyboardValidationHelper.IsToggleKeysEnabled(true, false);
-
-                Console.Write(prompt);
-
-                string? userInput = Console.ReadLine();
-
-                if (!string.IsNullOrWhiteSpace(userInput))
-                {
-                    return userInput;
-                }
-
-                Console.WriteLine("Invalid input. You cannot use an empty text or only white spaces.");
-            }
+          return userInput;
         }
 
-        public static string GetStringWhiteSpaceAllowed(string prompt)
-        {
-            while (true)
-            {
-                KeyboardValidationHelper.IsToggleKeysEnabled(true, false);
-
-                Console.Write(prompt);
-
-                string? userInput = Console.ReadLine();
-
-                if (!string.IsNullOrEmpty(userInput))
-                {
-                    return userInput;
-                }
-
-                Console.WriteLine("Invalid input. You cannot use an empty text.");
-            }
-        }
-
-        public static string GetCleanSpectreConsoleString(string input, string pattern = @"\[(.*?)\](.*?)\[/\]")
-        {
-            Match match = Regex.Match(input, pattern);
-
-            string labelText = match.Groups[2].Value;
-            string cleanedLabel = string.Join("", labelText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
-
-            return cleanedLabel;
-        }
-
-        public static string CreateRandomString(int length = 60, string AllowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
-        {
-            Random Random = new Random();
-
-            char[] randomUserId = new char[length];
-            for (int i = 0; i < length; i++)
-            {
-                randomUserId[i] = AllowedChars[Random.Next(0, AllowedChars.Length)];
-            }
-            return new string(randomUserId);
-        }
+        Console.WriteLine("Invalid input. You cannot use an empty text or only white spaces.");
+      }
     }
+
+    public static string GetStringWhiteSpaceAllowed(string prompt)
+    {
+      while (true)
+      {
+        KeyboardValidationHelper.IsToggleKeysEnabled(true, false);
+
+        Console.Write(prompt);
+
+        string? userInput = Console.ReadLine();
+
+        if (!string.IsNullOrEmpty(userInput))
+        {
+          return userInput;
+        }
+
+        Console.WriteLine("Invalid input. You cannot use an empty text.");
+      }
+    }
+
+    //public static string GetCleanSpectreConsoleString(string input, string pattern = @"\[(.*?)\](.*?)\[/\]")
+    //{
+    //  Match match = Regex.Match(input, pattern);
+
+    //  string labelText = match.Groups[2].Value;
+    //  string cleanedLabel = string.Join("", labelText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
+
+    //  return cleanedLabel;
+    //}
+
+    public static string GetCleanSpectreConsoleString(string input, string pattern = @"\[(.*?)\](.*?)\[/\]")
+    {
+      Regex regex = new Regex(pattern);
+
+      string result = regex.Replace(input, match =>
+      {
+
+        string content = match.Groups[2].Value;
+
+        string[] words = content.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+        StringBuilder transformedContent = new StringBuilder();
+
+        foreach (string word in words)
+        {
+          string cleanedWord = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(word.Replace(" ", "").Trim());
+
+          transformedContent.Append(cleanedWord);
+        }
+
+        return transformedContent.ToString();
+      });
+
+      return result;
+    }
+
+    public static string CreateRandomString(int length = 60, string AllowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
+    {
+      Random Random = new Random();
+
+      char[] randomUserId = new char[length];
+      for (int i = 0; i < length; i++)
+      {
+        randomUserId[i] = AllowedChars[Random.Next(0, AllowedChars.Length)];
+      }
+      return new string(randomUserId);
+    }
+  }
 }

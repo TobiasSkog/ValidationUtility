@@ -26,7 +26,7 @@ namespace ValidationUtility
         {
             while (true)
             {
-                Console.Write($"{prompt}, in this format: {format}");
+                Console.Write($"{prompt}, in this format ({format}): ");
 
                 if (DateTime.TryParseExact(Console.ReadLine(), format, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime validDateTime))
                 {
