@@ -57,7 +57,9 @@ namespace ValidationUtility
         {
           errorMessages.Add("Username contains illegal characters.");
         }
-        username = username.Normalize();
+
+        username = StringValidationHelper.GetCleanSpectreConsoleString(username);
+
         return (ErrorMessages: errorMessages, Username: username.Trim());
       }
     }

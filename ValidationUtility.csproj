@@ -4,7 +4,6 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <BaseOutputPath>F:\SKOLA EDUGRADE\Libraries</BaseOutputPath>
     <BaseIntermediateOutputPath />
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>

@@ -56,7 +56,7 @@
 
                 if (!Enum.TryParse(enumName, out T validEnumValue))
                 {
-                    throw new ArgumentException("Invalid Enum value.");
+                    throw new ArgumentException($"Invalid Enum value \"{enumName}\".");
                 }
                 return validEnumValue;
             }
